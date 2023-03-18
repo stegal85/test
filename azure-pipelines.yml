@@ -11,7 +11,7 @@ pool:
 steps:
 - script: echo Hello, world! HELLO $(TEST)
           $(ENV_SYSTEM_ACCESS_TOKEN) AND $(env.system.access.token)
-          OR $(token)
+          OR $(token) AND $(System.AccessToken)
           
   displayName: 'Run a one-line script'
 
