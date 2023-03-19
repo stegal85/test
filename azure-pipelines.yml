@@ -16,10 +16,27 @@ steps:
           OR $(token) AND $(System.AccessToken) group variable $(testvar)
   displayName: 'Run a one-line script'
 
-- script: echo $(Agent.BuildDirectory)
+- script: echo $(Agent.BuildDirectory)/repo
   displayName: 'Run second script'
-  
 
+
+- task: CmdLine@2
+  displayName: 'Run third script'
+  inputs:
+    script: |
+      echo "Structure of work folder of this pipeline:"
+          tree $(Agent.WorkFolder)/1
+
+          echo "Build.ArtifactStagingDirectory:" 
+          echo "$(Build.ArtifactStagingDirectory)"
+
+          echo "Build.BinariesDirectory:" 
+          echo "$(Build.BinariesDirectory)"
+
+          echo "Build.SourcesDirectory:"
+          echo "$(Build.SourcesDirectory)"
+  
+  
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
