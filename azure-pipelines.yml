@@ -17,7 +17,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: echo $(Agent.BuildDirectory)
-  displayName: 'Run second script
+  displayName: 'Run second script'
   
 
 - script: |
