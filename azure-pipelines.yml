@@ -14,8 +14,11 @@ steps:
 - script: echo Hello, world! HELLO $(TEST)
           $(ENV_SYSTEM_ACCESS_TOKEN) AND $(env.system.access.token)
           OR $(token) AND $(System.AccessToken) group variable $(testvar)
-          
   displayName: 'Run a one-line script'
+
+- script: echo $(Agent.BuildDirectory)
+  displayName: 'Run second script
+  
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
